@@ -3,13 +3,18 @@ import {Link} from 'react-router-dom'
 import LandingIntro from './LandingIntro'
 import ErrorText from  '../../components/Typography/ErrorText'
 import InputText from '../../components/Input/InputText'
+import ToogleInput from '../../components/Input/ToogleInput'
 
 function Register(){
 
     const INITIAL_REGISTER_OBJ = {
         name : "",
         password : "",
-        emailId : ""
+        emailId : "",
+        dob: "",
+        gender: "",
+        address: "",
+        phoneNumber: "",
     }
 
     const [loading, setLoading] = useState(false)
@@ -55,6 +60,17 @@ function Register(){
                             <InputText defaultValue={registerObj.emailId} updateType="emailId" containerStyle="mt-4" labelTitle="Email Id" updateFormValue={updateFormValue}/>
 
                             <InputText defaultValue={registerObj.password} type="password" updateType="password" containerStyle="mt-4" labelTitle="Password" updateFormValue={updateFormValue}/>
+
+                            <InputText defaultValue={registerObj.dob} type="date" updateType="dob" containerStyle="mt-4" labelTitle="Date of birth" updateFormValue={updateFormValue}/>
+                            <span className={"label-text text-base-content"}>Gender</span>
+                            
+                            <div className='df justify-content-center'>
+                                <ToogleInput defaultValue={registerObj.gender} updateType="gender" labelTitle="Male" containerStyle="mt-4" updateFormValue={updateFormValue}/>
+                                <ToogleInput defaultValue={registerObj.gender} updateType="gender" labelTitle="Female" containerStyle="mt-4" updateFormValue={updateFormValue}/>
+                                <ToogleInput defaultValue={registerObj.gender} updateType="gender" labelTitle="Other" containerStyle="mt-4" updateFormValue={updateFormValue}/>
+                            </div>
+                            <InputText defaultValue={registerObj.address} updateType="address" containerStyle="mt-4" labelTitle="Address" updateFormValue={updateFormValue}/>
+                            <InputText defaultValue={registerObj.phone} updateType="phone" containerStyle="mt-4" labelTitle="Phone number" updateFormValue={updateFormValue}/>
 
                         </div>
 
