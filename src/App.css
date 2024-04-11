@@ -13,6 +13,22 @@
   }
 }
 
+.df {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
